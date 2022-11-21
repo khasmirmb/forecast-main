@@ -116,3 +116,22 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+--
+-- CREATE A TABLE FOR 'account'
+--
+CREATE TABLE `accounts` (
+  `id` int(11) NOT NULL,
+  `firstname` varchar(255) NOT NULL,
+  `lastname` varchar(255) NOT NULL,
+  `type` varchar(100) NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- INSERT VALUES FOR 'account'
+--
+
+INSERT INTO `accounts` (`id`, `firstname`, `lastname`, `type`, `username`, `password`) VALUES (1, 'Jaydee', 'Ballaho', 'admin', 'jaydee', 'jaydee'), (2, 'Root', 'Root', 'admin', 'root', 'root'), (3, 'Natsu', 'Dragneel', 'staff', 'natsu', 'natsu'), (4, 'Erza', 'Scarlet', 'staff', 'erza', 'erza'), (5, 'Lucy', 'Felix', 'staff', 'lucy', 'lucy');
