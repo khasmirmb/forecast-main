@@ -98,3 +98,35 @@
     require_once '../includes/bottomnav.php';
     require_once '../includes/footer.php';
 ?>
+
+<div id="delete-dialog" class="dialog" title="Delete Faculty">
+    <p><span>Are you sure you want to delete the selected record?</span></p>
+</div>
+
+<script>
+    $(document).ready(function() {
+        $("#delete-dialog").dialog({
+            resizable: false,
+            draggable: false,
+            height: "auto",
+            width: 400,
+            modal: true,
+            autoOpen: false
+        });
+        $(".action-delete").on('click', function(e) {
+            e.preventDefault();
+            var theHREF = $(this).attr("href");
+
+            $("#delete-dialog").dialog('option', 'buttons', {
+                "Yes" : function() {
+                    window.location.href = theHREF;
+                },
+                "Cancel" : function() {
+                    $(this).dialog("close");
+                }
+            });
+
+            $("#delete-dialog").dialog("open");
+        });
+    });
+</script>

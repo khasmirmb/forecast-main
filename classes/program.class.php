@@ -24,7 +24,7 @@ Class Program{
     //Methods
 
     function add(){
-        $sql = "INSERT INTO programs (code, description, years, level, cet, status) VALUES
+        $sql = "INSERT INTO programs (code, description, years, level, cet, status) VALUES 
         (:code, :description, :years, :level, :cet, :status);";
 
         $query=$this->db->connect()->prepare($sql);
@@ -54,23 +54,35 @@ Class Program{
         $query->bindParam(':cet', $this->cet);
         $query->bindParam(':status', $this->status);
         $query->bindParam(':id', $this->id);
-
+        
         if($query->execute()){
             return true;
         }
         else{
             return false;
-        }
+        }	
     }
 
     function fetch($record_id){
-        $sql = "SELECT * FROM programs WHERE id = :id ORDER BY code ASC;";
+        $sql = "SELECT * FROM programs WHERE id = :id;";
         $query=$this->db->connect()->prepare($sql);
         $query->bindParam(':id', $record_id);
         if($query->execute()){
             $data = $query->fetch();
         }
         return $data;
+    }
+
+    function delete($record_id){
+        $sql = "DELETE FROM programs WHERE id = :id;";
+        $query=$this->db->connect()->prepare($sql);
+        $query->bindParam(':id', $record_id);
+        if($query->execute()){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
     function show(){
