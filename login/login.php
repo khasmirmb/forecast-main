@@ -71,6 +71,7 @@
                 //Display the error message if there is any.
                 if(isset($error)){
                     echo '<div><p class="error">'.$error.'</p></div>';
+                    echo '<div><p class="error">'.$user_taken.'</p></div>';
                 }
 
             ?>
@@ -95,7 +96,7 @@
                 <form action="" method="post">
                     <input type="text" name="firstname" class="form-control" placeholder="Enter Firstname" required>
                     <input type="text" name="lastname" class="form-control" placeholder="Enter Lastname" required>
-                    <input type="hidden" id="type" name="type"" value="user">
+                    <input type="hidden" id="type" name="type" value="staff">
                     <input type="text" name="username" class="form-control" placeholder="Enter Username" required>
                     <input type="password" name="password" class="form-control" placeholder="Enter Password" required>
                     <button type="submit" value="create account" name="save" id="save">Create Account</button>
