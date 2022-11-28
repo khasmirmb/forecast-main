@@ -71,7 +71,6 @@
                 //Display the error message if there is any.
                 if(isset($error)){
                     echo '<div><p class="error">'.$error.'</p></div>';
-                    echo '<div><p class="error">'.$user_taken.'</p></div>';
                 }
 
             ?>
